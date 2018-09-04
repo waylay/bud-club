@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Invitation;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //Mail::to(auth()->user())->send(new Invitation(auth()->user()));
+
         return view('home');
     }
 }
